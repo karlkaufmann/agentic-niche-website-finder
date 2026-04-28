@@ -1,0 +1,11 @@
+---
+description: Never commit data files or model binaries in this public-oriented repo; enforce denylist before commits.
+alwaysApply: true
+---
+
+# Public repository safety
+
+- **Never** commit data files (CSV, archives, Parquet, Feather, databases) or model binaries (pickle, joblib, ONNX, PyTorch, HDF5).
+- **Allowed** by default for publication: Jupyter notebooks (`.ipynb`), evaluation scripts such as `evaluate_model.py`, and documentation (README, evaluation markdown).
+- **Before every commit**: mentally or mechanically walk the **denylist** (same patterns as `.gitignore`: `*.csv`, `*.zip`, `*.gz`, `*.7z`, `*.parquet`, `*.feather`, `*.pkl`, `*.joblib`, `*.onnx`, `*.pt`, `*.h5`, `*.db`, `*.sqlite`, `.env`, `*.key`, `*.pem`, `*.secrets*`, and paths under `data/`, `datasets/`, `raw/`, `exports/`, `venv/`, `.venv/`, `__pycache__/`).
+- If anything forbidden appears in **staged** changes: **unstage** those paths (`git restore --staged <path>`) and **do not** complete the commit until only allowlisted files remain.

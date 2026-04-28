@@ -1,0 +1,38 @@
+# Data & archives
+*.csv
+*.zip
+*.gz
+*.7z
+*.parquet
+*.feather
+
+# Model binaries
+*.pkl
+*.joblib
+*.onnx
+*.pt
+*.h5
+
+# Databases
+*.db
+*.sqlite
+
+# Secrets & env
+.env
+.env.*
+*.key
+*.pem
+*.secrets*
+
+# Directories (data, envs, caches)
+data/
+datasets/
+raw/
+exports/
+venv/
+.venv/
+__pycache__/
+node_modules/
+
+# OS / IDE (optional noise)
+.DS_Store
